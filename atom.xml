@@ -1,0 +1,808 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>苏同的博客</title>
+  <subtitle>有健康叫资产，没健康叫遗产</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://sutong.github.io/"/>
+  <updated>2017-08-02T01:16:20.662Z</updated>
+  <id>http://sutong.github.io/</id>
+  
+  <author>
+    <name>苏同</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>git打标签</title>
+    <link href="http://sutong.github.io/%E5%9B%A2%E9%98%9F%E5%8D%8F%E4%BD%9C/git/git%E6%89%93%E6%A0%87%E7%AD%BE/"/>
+    <id>http://sutong.github.io/团队协作/git/git打标签/</id>
+    <published>2017-08-02T00:31:18.000Z</published>
+    <updated>2017-08-02T01:16:20.662Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">以develop分支某一时间点，打标签，加上发布内容,发布到git服务器。</div></pre></td></tr></table></figure>
+<h3 id="1、切换分支"><a href="#1、切换分支" class="headerlink" title="1、切换分支"></a>1、切换分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git check develop</div></pre></td></tr></table></figure>
+<h3 id="2、更新代码"><a href="#2、更新代码" class="headerlink" title="2、更新代码"></a>2、更新代码</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git pull origin develop</div></pre></td></tr></table></figure>
+<h3 id="3、查看日志"><a href="#3、查看日志" class="headerlink" title="3、查看日志"></a>3、查看日志</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">log</span></div></pre></td></tr></table></figure>
+<a id="more"></a>
+<p><strong>内容如下</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">commit 9dbbe55481b802dece63a804e178ff5761d1440d</div><div class="line">Author: fish &lt;meikehuan@163.com&gt;</div><div class="line">Date:   Mon Jul 31 20:29:54 2017 +0800</div><div class="line"></div><div class="line">    修改code，账号密码有误</div><div class="line"></div><div class="line">commit 16c0be37d8d3ae12938390dec5a5aad7ad75d960</div><div class="line">Author: fish &lt;meikehuan@163.com&gt;</div><div class="line">Date:   Mon Jul 31 20:13:55 2017 +0800</div><div class="line"></div><div class="line">    修改文案</div><div class="line"></div><div class="line">commit b8ffba711207a167a7b23ebd486d9408acbb5f25</div><div class="line">Author: fish &lt;meikehuan@163.com&gt;</div><div class="line">Date:   Mon Jul 31 19:43:20 2017 +0800</div><div class="line"></div><div class="line">    debug</div><div class="line"></div><div class="line">commit 0f1e18cc09906c2e01262a88d445ff2fec19d103</div><div class="line">Author: fish &lt;meikehuan@163.com&gt;</div><div class="line">Date:   Mon Jul 31 19:38:14 2017 +0800</div><div class="line"></div><div class="line">    增加修改密码接口</div><div class="line"></div><div class="line">commit 51b4e57b1a05e7845c9b18857d58e002e1fef5f1</div><div class="line">Author: fish &lt;meikehuan@163.com&gt;</div><div class="line">Date:   Mon Jul 31 17:09:07 2017 +0800</div><div class="line"></div><div class="line">    类型修改</div><div class="line"></div><div class="line">commit 656bbdf726f136e3d3e812f594095ea29f766cd1</div></pre></td></tr></table></figure></p>
+<h3 id="4、打标签"><a href="#4、打标签" class="headerlink" title="4、打标签"></a>4、打标签</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git tag -a -m <span class="string">"message"</span> tagName commitId</div></pre></td></tr></table></figure>
+<p><strong>说明</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">message：后面的message为发布内容</div><div class="line">tagName: 标签名，格式为v+版本号，如v1.0.1</div><div class="line">commitId: 通过git log 获取，如b8ffba711207a167a7b23ebd486d9408acbb5f25</div></pre></td></tr></table></figure></p>
+<h3 id="5、推送到服务器"><a href="#5、推送到服务器" class="headerlink" title="5、推送到服务器"></a>5、推送到服务器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git push origin tagName</div></pre></td></tr></table></figure>
+<p><strong>说明</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tagName: 标签名，与第4步标签名相同</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;以develop分支某一时间点，打标签，加上发布内容,发布到git服务器。&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;1、切换分支&quot;&gt;&lt;a href=&quot;#1、切换分支&quot; class=&quot;headerlink&quot; title=&quot;1、切换分支&quot;&gt;&lt;/a&gt;1、切换分支&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;git check develop&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;2、更新代码&quot;&gt;&lt;a href=&quot;#2、更新代码&quot; class=&quot;headerlink&quot; title=&quot;2、更新代码&quot;&gt;&lt;/a&gt;2、更新代码&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;git pull origin develop&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;3、查看日志&quot;&gt;&lt;a href=&quot;#3、查看日志&quot; class=&quot;headerlink&quot; title=&quot;3、查看日志&quot;&gt;&lt;/a&gt;3、查看日志&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;git &lt;span class=&quot;built_in&quot;&gt;log&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="团队协作" scheme="http://sutong.github.io/categories/%E5%9B%A2%E9%98%9F%E5%8D%8F%E4%BD%9C/"/>
+    
+      <category term="git" scheme="http://sutong.github.io/categories/%E5%9B%A2%E9%98%9F%E5%8D%8F%E4%BD%9C/git/"/>
+    
+    
+      <category term="git" scheme="http://sutong.github.io/tags/git/"/>
+    
+      <category term="push" scheme="http://sutong.github.io/tags/push/"/>
+    
+      <category term="tag" scheme="http://sutong.github.io/tags/tag/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>chrome打开新的标签，显示无法访问该网站</title>
+    <link href="http://sutong.github.io/%E6%B5%8F%E8%A7%88%E5%99%A8/chrome/chrome%E6%89%93%E5%BC%80%E6%96%B0%E7%9A%84%E6%A0%87%E7%AD%BE%EF%BC%8C%E6%98%BE%E7%A4%BA%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E8%AF%A5%E7%BD%91%E7%AB%99/"/>
+    <id>http://sutong.github.io/浏览器/chrome/chrome打开新的标签，显示无法访问该网站/</id>
+    <published>2017-06-15T06:17:23.000Z</published>
+    <updated>2017-08-02T00:21:42.604Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="chrome浏览器打开新标签时，出现如下状况，如何解决"><a href="#chrome浏览器打开新标签时，出现如下状况，如何解决" class="headerlink" title="chrome浏览器打开新标签时，出现如下状况，如何解决"></a>chrome浏览器打开新标签时，出现如下状况，如何解决</h2><img src="/浏览器/chrome/chrome打开新的标签，显示无法访问该网站/1.png" alt="1.png" title="">
+<a id="more"></a>
+<h4 id="1、打开浏览器，输入chrome-net-internals-hsts"><a href="#1、打开浏览器，输入chrome-net-internals-hsts" class="headerlink" title="1、打开浏览器，输入chrome://net-internals/#hsts"></a>1、打开浏览器，输入chrome://net-internals/#hsts</h4><h4 id="2、在-Input-a-domain-name-to-add-it-to-the-HSTS-set-这一行下面的-Domain-输入-www-google-com-hk-点-Add"><a href="#2、在-Input-a-domain-name-to-add-it-to-the-HSTS-set-这一行下面的-Domain-输入-www-google-com-hk-点-Add" class="headerlink" title="2、在 Input a domain name to add it to the HSTS set: 这一行下面的 Domain: [ ]输入 www.google.com.hk 点 Add"></a>2、在 Input a domain name to add it to the HSTS set: 这一行下面的 Domain: [ ]输入 www.google.com.hk 点 Add</h4><p><strong>注：该方法可以让访问www.google.com.hk的时候，自动使用https协议</strong></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;chrome浏览器打开新标签时，出现如下状况，如何解决&quot;&gt;&lt;a href=&quot;#chrome浏览器打开新标签时，出现如下状况，如何解决&quot; class=&quot;headerlink&quot; title=&quot;chrome浏览器打开新标签时，出现如下状况，如何解决&quot;&gt;&lt;/a&gt;chrome浏览器打开新标签时，出现如下状况，如何解决&lt;/h2&gt;&lt;img src=&quot;/浏览器/chrome/chrome打开新的标签，显示无法访问该网站/1.png&quot; alt=&quot;1.png&quot; title=&quot;&quot;&gt;
+    
+    </summary>
+    
+      <category term="浏览器" scheme="http://sutong.github.io/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
+    
+      <category term="chrome" scheme="http://sutong.github.io/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/chrome/"/>
+    
+    
+      <category term="chrome" scheme="http://sutong.github.io/tags/chrome/"/>
+    
+      <category term="打开" scheme="http://sutong.github.io/tags/%E6%89%93%E5%BC%80/"/>
+    
+      <category term="新标签" scheme="http://sutong.github.io/tags/%E6%96%B0%E6%A0%87%E7%AD%BE/"/>
+    
+      <category term="无法访问" scheme="http://sutong.github.io/tags/%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>解决Mysql Workbeach 1175 错误</title>
+    <link href="http://sutong.github.io/%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL-Workbench/%E8%A7%A3%E5%86%B3Mysql-Workbeach-1175-%E9%94%99%E8%AF%AF/"/>
+    <id>http://sutong.github.io/数据库/MySQL-Workbench/解决Mysql-Workbeach-1175-错误/</id>
+    <published>2017-06-13T03:10:52.000Z</published>
+    <updated>2017-08-02T00:21:42.604Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">使用MySQL Workbench进行批量更新时，报如下错误</div><div class="line">Error Code: 1175</div><div class="line">You are using safe...without a WHERE that uses a KEY column</div></pre></td></tr></table></figure>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><h4 id="1、打开Workbench的菜单-Edit-gt-Preferences…"><a href="#1、打开Workbench的菜单-Edit-gt-Preferences…" class="headerlink" title="1、打开Workbench的菜单[Edit]-&gt;[Preferences…]"></a>1、打开Workbench的菜单[Edit]-&gt;[Preferences…]</h4><h4 id="2、切换到-SQL-Editor-页面"><a href="#2、切换到-SQL-Editor-页面" class="headerlink" title="2、切换到[SQL Editor]页面"></a>2、切换到[SQL Editor]页面</h4><h4 id="3、把-Forbid-UPDATE-and-DELETE-statements-without-a-WHERE-clause-safe-updates-之前的对勾去掉"><a href="#3、把-Forbid-UPDATE-and-DELETE-statements-without-a-WHERE-clause-safe-updates-之前的对勾去掉" class="headerlink" title="3、把[Forbid UPDATE and DELETE statements without a WHERE clause (safe updates)]之前的对勾去掉"></a>3、把[Forbid UPDATE and DELETE statements without a WHERE clause (safe updates)]之前的对勾去掉</h4><h4 id="4、点击-OK-按钮"><a href="#4、点击-OK-按钮" class="headerlink" title="4、点击[OK]按钮"></a>4、点击[OK]按钮</h4><h4 id="5、最后记得要重启一下sql-editor-建立一个新的连接就可以了"><a href="#5、最后记得要重启一下sql-editor-建立一个新的连接就可以了" class="headerlink" title="5、最后记得要重启一下sql editor,建立一个新的连接就可以了"></a>5、最后记得要重启一下sql editor,建立一个新的连接就可以了</h4>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div c
+    
+    </summary>
+    
+      <category term="数据库" scheme="http://sutong.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+      <category term="MySQL Workbench" scheme="http://sutong.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL-Workbench/"/>
+    
+    
+      <category term="mysql" scheme="http://sutong.github.io/tags/mysql/"/>
+    
+      <category term="workbeach" scheme="http://sutong.github.io/tags/workbeach/"/>
+    
+      <category term="1175" scheme="http://sutong.github.io/tags/1175/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>linux下git默认编辑器修改</title>
+    <link href="http://sutong.github.io/%E5%9B%A2%E9%98%9F%E5%8D%8F%E4%BD%9C/git/linux%E4%B8%8Bgit%E9%BB%98%E8%AE%A4%E7%BC%96%E8%BE%91%E5%99%A8%E4%BF%AE%E6%94%B9/"/>
+    <id>http://sutong.github.io/团队协作/git/linux下git默认编辑器修改/</id>
+    <published>2017-06-02T07:40:39.000Z</published>
+    <updated>2017-08-02T00:21:42.604Z</updated>
+    
+    <content type="html"><![CDATA[<p>git默认的编辑器是nano，使用起来不方便。</p>
+<h2 id="1、执行如下命令，修改默认编辑器为vim。"><a href="#1、执行如下命令，修改默认编辑器为vim。" class="headerlink" title="1、执行如下命令，修改默认编辑器为vim。"></a>1、执行如下命令，修改默认编辑器为vim。</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git config --global core.editor vim</div></pre></td></tr></table></figure>
+<h2 id="2、打开-gitconfig文件查看"><a href="#2、打开-gitconfig文件查看" class="headerlink" title="2、打开~/.gitconfig文件查看"></a>2、打开~/.gitconfig文件查看</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[core]</div><div class="line">editor=vim</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;git默认的编辑器是nano，使用起来不方便。&lt;/p&gt;
+&lt;h2 id=&quot;1、执行如下命令，修改默认编辑器为vim。&quot;&gt;&lt;a href=&quot;#1、执行如下命令，修改默认编辑器为vim。&quot; class=&quot;headerlink&quot; title=&quot;1、执行如下命令，修改默认编辑器为vi
+    
+    </summary>
+    
+      <category term="团队协作" scheme="http://sutong.github.io/categories/%E5%9B%A2%E9%98%9F%E5%8D%8F%E4%BD%9C/"/>
+    
+      <category term="git" scheme="http://sutong.github.io/categories/%E5%9B%A2%E9%98%9F%E5%8D%8F%E4%BD%9C/git/"/>
+    
+    
+      <category term="修改" scheme="http://sutong.github.io/tags/%E4%BF%AE%E6%94%B9/"/>
+    
+      <category term="git" scheme="http://sutong.github.io/tags/git/"/>
+    
+      <category term="编辑器" scheme="http://sutong.github.io/tags/%E7%BC%96%E8%BE%91%E5%99%A8/"/>
+    
+      <category term="默认" scheme="http://sutong.github.io/tags/%E9%BB%98%E8%AE%A4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>修复ubuntu16.10与window双系统时间同步异常</title>
+    <link href="http://sutong.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E4%BF%AE%E5%A4%8Dubuntu16-10%E4%B8%8Ewindow%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4%E5%90%8C%E6%AD%A5%E5%BC%82%E5%B8%B8/"/>
+    <id>http://sutong.github.io/操作系统/linux/修复ubuntu16-10与window双系统时间同步异常/</id>
+    <published>2017-05-14T11:28:44.000Z</published>
+    <updated>2017-08-02T00:21:42.604Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="在ubuntu系统执行如下命令"><a href="#在ubuntu系统执行如下命令" class="headerlink" title="在ubuntu系统执行如下命令"></a>在ubuntu系统执行如下命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo timedatectl set-local-rtc 1</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;在ubuntu系统执行如下命令&quot;&gt;&lt;a href=&quot;#在ubuntu系统执行如下命令&quot; class=&quot;headerlink&quot; title=&quot;在ubuntu系统执行如下命令&quot;&gt;&lt;/a&gt;在ubuntu系统执行如下命令&lt;/h2&gt;&lt;figure class=&quot;highli
+    
+    </summary>
+    
+      <category term="操作系统" scheme="http://sutong.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+      <category term="linux" scheme="http://sutong.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/"/>
+    
+    
+      <category term="window" scheme="http://sutong.github.io/tags/window/"/>
+    
+      <category term="ubuntu" scheme="http://sutong.github.io/tags/ubuntu/"/>
+    
+      <category term="双系统" scheme="http://sutong.github.io/tags/%E5%8F%8C%E7%B3%BB%E7%BB%9F/"/>
+    
+      <category term="时间同步" scheme="http://sutong.github.io/tags/%E6%97%B6%E9%97%B4%E5%90%8C%E6%AD%A5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>解决ubuntu下搜狗输入法不能输入中文</title>
+    <link href="http://sutong.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E8%A7%A3%E5%86%B3ubuntu%E4%B8%8B%E6%90%9C%E7%8B%97%E8%BE%93%E5%85%A5%E6%B3%95%E4%B8%8D%E8%83%BD%E8%BE%93%E5%85%A5%E4%B8%AD%E6%96%87/"/>
+    <id>http://sutong.github.io/操作系统/linux/解决ubuntu下搜狗输入法不能输入中文/</id>
+    <published>2017-05-11T03:18:41.000Z</published>
+    <updated>2017-08-02T00:21:42.604Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="现象"><a href="#现象" class="headerlink" title="现象"></a>现象</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">可以呼出输入法界面，但是候选词列表无显示</div></pre></td></tr></table></figure>
+<h4 id="方法一、重启搜狗输入法"><a href="#方法一、重启搜狗输入法" class="headerlink" title="方法一、重启搜狗输入法"></a>方法一、重启搜狗输入法</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">killall fcitx</div><div class="line">killall sogou-qimpanel</div><div class="line">fcitx</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h4 id="方法二、修复依赖"><a href="#方法二、修复依赖" class="headerlink" title="方法二、修复依赖"></a>方法二、修复依赖</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt install -f</div></pre></td></tr></table></figure>
+<h4 id="方法三、删除配置文件，重启搜狗"><a href="#方法三、删除配置文件，重启搜狗" class="headerlink" title="方法三、删除配置文件，重启搜狗"></a>方法三、删除配置文件，重启搜狗</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">rm -rf ~/.config/sogou-qimpanel</div><div class="line">rm -rf ~/.config/SogouPY</div><div class="line">rm -rf ~/.config/SogouPY.users</div><div class="line">sogou-qimpanel</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;现象&quot;&gt;&lt;a href=&quot;#现象&quot; class=&quot;headerlink&quot; title=&quot;现象&quot;&gt;&lt;/a&gt;现象&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;可以呼出输入法界面，但是候选词列表无显示&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;方法一、重启搜狗输入法&quot;&gt;&lt;a href=&quot;#方法一、重启搜狗输入法&quot; class=&quot;headerlink&quot; title=&quot;方法一、重启搜狗输入法&quot;&gt;&lt;/a&gt;方法一、重启搜狗输入法&lt;/h4&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;killall fcitx&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;killall sogou-qimpanel&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;fcitx&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="操作系统" scheme="http://sutong.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+      <category term="linux" scheme="http://sutong.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/"/>
+    
+    
+      <category term="ubuntu" scheme="http://sutong.github.io/tags/ubuntu/"/>
+    
+      <category term="中文" scheme="http://sutong.github.io/tags/%E4%B8%AD%E6%96%87/"/>
+    
+      <category term="搜狗输入法" scheme="http://sutong.github.io/tags/%E6%90%9C%E7%8B%97%E8%BE%93%E5%85%A5%E6%B3%95/"/>
+    
+      <category term="异常" scheme="http://sutong.github.io/tags/%E5%BC%82%E5%B8%B8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git push免输入账号和密码</title>
+    <link href="http://sutong.github.io/%E5%9B%A2%E9%98%9F%E5%8D%8F%E4%BD%9C/git/git-push%E5%85%8D%E8%BE%93%E5%85%A5%E8%B4%A6%E5%8F%B7%E5%92%8C%E5%AF%86%E7%A0%81/"/>
+    <id>http://sutong.github.io/团队协作/git/git-push免输入账号和密码/</id>
+    <published>2017-04-27T08:34:25.000Z</published>
+    <updated>2017-08-02T00:21:42.604Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="1、创建文件，加入如下内容"><a href="#1、创建文件，加入如下内容" class="headerlink" title="1、创建文件，加入如下内容"></a>1、创建文件，加入如下内容</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> ~</div><div class="line">touch .git-credentials</div><div class="line">vi .git-credentials</div><div class="line">https://&#123;username&#125;:&#123;password&#125;@&#123;domain&#125;&#123;:port&#125;</div></pre></td></tr></table></figure>
+<h4 id="2、执行如下命令"><a href="#2、执行如下命令" class="headerlink" title="2、执行如下命令"></a>2、执行如下命令</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git config --global credential.helper store</div></pre></td></tr></table></figure>
+<h4 id="3、打开-gitconfig文件查看"><a href="#3、打开-gitconfig文件查看" class="headerlink" title="3、打开~/.gitconfig文件查看"></a>3、打开~/.gitconfig文件查看</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[credential]</div><div class="line">helper = store</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;1、创建文件，加入如下内容&quot;&gt;&lt;a href=&quot;#1、创建文件，加入如下内容&quot; class=&quot;headerlink&quot; title=&quot;1、创建文件，加入如下内容&quot;&gt;&lt;/a&gt;1、创建文件，加入如下内容&lt;/h4&gt;&lt;figure class=&quot;highlight bash
+    
+    </summary>
+    
+      <category term="团队协作" scheme="http://sutong.github.io/categories/%E5%9B%A2%E9%98%9F%E5%8D%8F%E4%BD%9C/"/>
+    
+      <category term="git" scheme="http://sutong.github.io/categories/%E5%9B%A2%E9%98%9F%E5%8D%8F%E4%BD%9C/git/"/>
+    
+    
+      <category term="git" scheme="http://sutong.github.io/tags/git/"/>
+    
+      <category term="push" scheme="http://sutong.github.io/tags/push/"/>
+    
+      <category term="免输入" scheme="http://sutong.github.io/tags/%E5%85%8D%E8%BE%93%E5%85%A5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>linux服务器如何实现免密登录</title>
+    <link href="http://sutong.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95/"/>
+    <id>http://sutong.github.io/操作系统/linux/linux服务器如何实现免密登录/</id>
+    <published>2017-04-16T13:44:34.000Z</published>
+    <updated>2017-08-02T00:21:42.604Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="I、背景"><a href="#I、背景" class="headerlink" title="I、背景"></a>I、背景</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">以从IP为20.1.1.1的客户端登录到IP为10.1.1.1的服务端为例</div><div class="line">其中，客户端用户名为client,服务端用户名为server</div></pre></td></tr></table></figure>
+<h2 id="II、服务端"><a href="#II、服务端" class="headerlink" title="II、服务端"></a>II、服务端</h2><h3 id="1、生成密钥对"><a href="#1、生成密钥对" class="headerlink" title="1、生成密钥对"></a>1、生成密钥对</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa</div></pre></td></tr></table></figure>
+<h3 id="2、将生成的公钥加入到authorized-keys中"><a href="#2、将生成的公钥加入到authorized-keys中" class="headerlink" title="2、将生成的公钥加入到authorized_keys中"></a>2、将生成的公钥加入到authorized_keys中</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat id_rsa.pub &gt;&gt; authorized_keys</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="3、修改authroized-keys权限"><a href="#3、修改authroized-keys权限" class="headerlink" title="3、修改authroized_keys权限"></a>3、修改authroized_keys权限</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chmod 600 authorized_keys</div></pre></td></tr></table></figure>
+<h2 id="III、客户端"><a href="#III、客户端" class="headerlink" title="III、客户端"></a>III、客户端</h2><h3 id="1、传输服务器端生成的私钥（注意保密）"><a href="#1、传输服务器端生成的私钥（注意保密）" class="headerlink" title="1、传输服务器端生成的私钥（注意保密）"></a>1、传输服务器端生成的私钥（注意保密）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">scp -P 22 server@10.1.1.1:/home/client/.ssh/id_rsa ~/.ssh/server_rsa</div></pre></td></tr></table></figure>
+<p><strong>其中 -P:端口号</strong></p>
+<h3 id="2、配置config文件，并加入如下内容"><a href="#2、配置config文件，并加入如下内容" class="headerlink" title="2、配置config文件，并加入如下内容"></a>2、配置config文件，并加入如下内容</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vi ~/.ssh/config</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Host server_rsa</div><div class="line">User server</div><div class="line">Hostname 10.1.1.1</div><div class="line">Port 22</div><div class="line">IdentityFile ~/.ssh/server_rsa</div></pre></td></tr></table></figure>
+<h3 id="3、测试"><a href="#3、测试" class="headerlink" title="3、测试"></a>3、测试</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh server_rsa</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;I、背景&quot;&gt;&lt;a href=&quot;#I、背景&quot; class=&quot;headerlink&quot; title=&quot;I、背景&quot;&gt;&lt;/a&gt;I、背景&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;以从IP为20.1.1.1的客户端登录到IP为10.1.1.1的服务端为例&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;其中，客户端用户名为client,服务端用户名为server&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;II、服务端&quot;&gt;&lt;a href=&quot;#II、服务端&quot; class=&quot;headerlink&quot; title=&quot;II、服务端&quot;&gt;&lt;/a&gt;II、服务端&lt;/h2&gt;&lt;h3 id=&quot;1、生成密钥对&quot;&gt;&lt;a href=&quot;#1、生成密钥对&quot; class=&quot;headerlink&quot; title=&quot;1、生成密钥对&quot;&gt;&lt;/a&gt;1、生成密钥对&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;ssh-keygen -t rsa&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;2、将生成的公钥加入到authorized-keys中&quot;&gt;&lt;a href=&quot;#2、将生成的公钥加入到authorized-keys中&quot; class=&quot;headerlink&quot; title=&quot;2、将生成的公钥加入到authorized_keys中&quot;&gt;&lt;/a&gt;2、将生成的公钥加入到authorized_keys中&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;cat id_rsa.pub &amp;gt;&amp;gt; authorized_keys&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="操作系统" scheme="http://sutong.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+      <category term="linux" scheme="http://sutong.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/"/>
+    
+    
+      <category term="linux" scheme="http://sutong.github.io/tags/linux/"/>
+    
+      <category term="服务器" scheme="http://sutong.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+      <category term="免密" scheme="http://sutong.github.io/tags/%E5%85%8D%E5%AF%86/"/>
+    
+      <category term="登录" scheme="http://sutong.github.io/tags/%E7%99%BB%E5%BD%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何clone包含子模块的工程</title>
+    <link href="http://sutong.github.io/%E5%9B%A2%E9%98%9F%E5%8D%8F%E4%BD%9C/git/%E5%A6%82%E4%BD%95clone%E5%8C%85%E5%90%AB%E5%AD%90%E6%A8%A1%E5%9D%97%E7%9A%84%E5%B7%A5%E7%A8%8B/"/>
+    <id>http://sutong.github.io/团队协作/git/如何clone包含子模块的工程/</id>
+    <published>2017-04-15T09:15:57.000Z</published>
+    <updated>2017-08-02T00:21:42.604Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="目前有两种方式"><a href="#目前有两种方式" class="headerlink" title="目前有两种方式"></a>目前有两种方式</h2><h4 id="1、clone整个项目"><a href="#1、clone整个项目" class="headerlink" title="1、clone整个项目"></a>1、clone整个项目</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">clone</span> git@github.com:sutong/landscape-theme-extends-demo.git --recursive</div></pre></td></tr></table></figure>
+<h4 id="2、先clone父项目，再更新子项目"><a href="#2、先clone父项目，再更新子项目" class="headerlink" title="2、先clone父项目，再更新子项目"></a>2、先clone父项目，再更新子项目</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">clone</span> git@github.com:sutong/landscape-theme-extends-demo.git</div><div class="line">git submodule init</div><div class="line">git submodule update</div></pre></td></tr></table></figure>
+<h4 id="最后记得进入子模块所在的目录，追踪master分支"><a href="#最后记得进入子模块所在的目录，追踪master分支" class="headerlink" title="最后记得进入子模块所在的目录，追踪master分支"></a>最后记得进入子模块所在的目录，追踪master分支</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git checkout master</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;目前有两种方式&quot;&gt;&lt;a href=&quot;#目前有两种方式&quot; class=&quot;headerlink&quot; title=&quot;目前有两种方式&quot;&gt;&lt;/a&gt;目前有两种方式&lt;/h2&gt;&lt;h4 id=&quot;1、clone整个项目&quot;&gt;&lt;a href=&quot;#1、clone整个项目&quot; class=&quot;he
+    
+    </summary>
+    
+      <category term="团队协作" scheme="http://sutong.github.io/categories/%E5%9B%A2%E9%98%9F%E5%8D%8F%E4%BD%9C/"/>
+    
+      <category term="git" scheme="http://sutong.github.io/categories/%E5%9B%A2%E9%98%9F%E5%8D%8F%E4%BD%9C/git/"/>
+    
+    
+      <category term="clone" scheme="http://sutong.github.io/tags/clone/"/>
+    
+      <category term="git" scheme="http://sutong.github.io/tags/git/"/>
+    
+      <category term="submodule" scheme="http://sutong.github.io/tags/submodule/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>android studio 启动出现Unable to access Android SDK add-on list错误</title>
+    <link href="http://sutong.github.io/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/android/android-studio-%E5%90%AF%E5%8A%A8%E5%87%BA%E7%8E%B0Unable-to-access-Android-SDK-add-on-list%E9%94%99%E8%AF%AF/"/>
+    <id>http://sutong.github.io/移动开发/android/android-studio-启动出现Unable-to-access-Android-SDK-add-on-list错误/</id>
+    <published>2017-04-01T07:43:35.000Z</published>
+    <updated>2017-08-02T00:21:42.604Z</updated>
+    
+    <content type="html"><![CDATA[<img src="/移动开发/android/android-studio-启动出现Unable-to-access-Android-SDK-add-on-list错误/1-1.png" alt="1-1.png" title="">
+<a id="more"></a>
+<p><strong>在bin/idea.properties文件最后加入如下内容</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">disable.android.first.run=true</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;img src=&quot;/移动开发/android/android-studio-启动出现Unable-to-access-Android-SDK-add-on-list错误/1-1.png&quot; alt=&quot;1-1.png&quot; title=&quot;&quot;&gt;
+    
+    </summary>
+    
+      <category term="移动开发" scheme="http://sutong.github.io/categories/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/"/>
+    
+      <category term="android" scheme="http://sutong.github.io/categories/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/android/"/>
+    
+    
+      <category term="android" scheme="http://sutong.github.io/tags/android/"/>
+    
+      <category term="studio" scheme="http://sutong.github.io/tags/studio/"/>
+    
+      <category term="启动错误" scheme="http://sutong.github.io/tags/%E5%90%AF%E5%8A%A8%E9%94%99%E8%AF%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>修复输入法fcitx开机无法自启</title>
+    <link href="http://sutong.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E4%BF%AE%E5%A4%8D%E8%BE%93%E5%85%A5%E6%B3%95fcitx%E5%BC%80%E6%9C%BA%E6%97%A0%E6%B3%95%E8%87%AA%E5%90%AF/"/>
+    <id>http://sutong.github.io/操作系统/linux/修复输入法fcitx开机无法自启/</id>
+    <published>2017-03-30T06:26:57.000Z</published>
+    <updated>2017-08-02T00:21:42.604Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>编辑~/.profile文件，加入如下内容</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> LC_ALL=zh_CN.utf8</div><div class="line"><span class="built_in">export</span> XMODIFIERS=@im=fcitx</div><div class="line"><span class="built_in">export</span> QT_IM_MODULE=xim</div><div class="line"><span class="built_in">export</span> GTK_IM_MODULE=xim</div><div class="line">fcitx -d</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;编辑~/.profile文件，加入如下内容&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div
+    
+    </summary>
+    
+      <category term="操作系统" scheme="http://sutong.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+      <category term="linux" scheme="http://sutong.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/"/>
+    
+    
+      <category term="ubuntu" scheme="http://sutong.github.io/tags/ubuntu/"/>
+    
+      <category term="fcitx" scheme="http://sutong.github.io/tags/fcitx/"/>
+    
+      <category term="自启" scheme="http://sutong.github.io/tags/%E8%87%AA%E5%90%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>修复vi按键错乱</title>
+    <link href="http://sutong.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E4%BF%AE%E5%A4%8Dvi%E9%94%AE%E7%9B%98%E9%94%99%E4%B9%B1/"/>
+    <id>http://sutong.github.io/操作系统/linux/修复vi键盘错乱/</id>
+    <published>2017-03-30T02:30:32.000Z</published>
+    <updated>2017-08-02T00:21:42.604Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>原因：ubuntu vi 默认是安装 vim-tiny</strong></p>
+<h4 id="1、卸载"><a href="#1、卸载" class="headerlink" title="1、卸载"></a>1、卸载</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get remove vim-common</div></pre></td></tr></table></figure>
+<h4 id="2、安装"><a href="#2、安装" class="headerlink" title="2、安装"></a>2、安装</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install vim</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;原因：ubuntu vi 默认是安装 vim-tiny&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&quot;1、卸载&quot;&gt;&lt;a href=&quot;#1、卸载&quot; class=&quot;headerlink&quot; title=&quot;1、卸载&quot;&gt;&lt;/a&gt;1、卸载&lt;/h4&gt;&lt;figure class
+    
+    </summary>
+    
+      <category term="操作系统" scheme="http://sutong.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+      <category term="linux" scheme="http://sutong.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/"/>
+    
+    
+      <category term="ubuntu" scheme="http://sutong.github.io/tags/ubuntu/"/>
+    
+      <category term="vi" scheme="http://sutong.github.io/tags/vi/"/>
+    
+      <category term="按键" scheme="http://sutong.github.io/tags/%E6%8C%89%E9%94%AE/"/>
+    
+      <category term="错乱" scheme="http://sutong.github.io/tags/%E9%94%99%E4%B9%B1/"/>
+    
+      <category term="修复" scheme="http://sutong.github.io/tags/%E4%BF%AE%E5%A4%8D/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何将ubuntu打造成mac</title>
+    <link href="http://sutong.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E5%A6%82%E4%BD%95%E5%B0%86ubuntu%E6%89%93%E9%80%A0%E6%88%90mac/"/>
+    <id>http://sutong.github.io/操作系统/linux/如何将ubuntu打造成mac/</id>
+    <published>2017-03-29T07:01:45.000Z</published>
+    <updated>2017-08-02T00:21:42.592Z</updated>
+    
+    <content type="html"><![CDATA[<img src="/操作系统/linux/如何将ubuntu打造成mac/1-1.png" alt="1-1.png" title="">
+<h2 id="1、添加macbuntu源"><a href="#1、添加macbuntu源" class="headerlink" title="1、添加macbuntu源"></a>1、添加macbuntu源</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo add-apt-repository ppa:noobslab/macbuntu </div></pre></td></tr></table></figure>
+<h2 id="2、更新"><a href="#2、更新" class="headerlink" title="2、更新"></a>2、更新</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="3、安装相关包"><a href="#3、安装相关包" class="headerlink" title="3、安装相关包"></a>3、安装相关包</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install macbuntu-os-icons-lts-v8 macbuntu-os-ithemes-lts-v8 slingscold albert macbuntu-os-plank-theme-lts-v8					</div></pre></td></tr></table></figure>
+<h2 id="4、安装unity-tweak-tool"><a href="#4、安装unity-tweak-tool" class="headerlink" title="4、安装unity-tweak-tool"></a>4、安装unity-tweak-tool</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install unity-tweak-tool </div></pre></td></tr></table></figure>
+<h2 id="5、打开unity-tweak-tool"><a href="#5、打开unity-tweak-tool" class="headerlink" title="5、打开unity-tweak-tool"></a>5、打开unity-tweak-tool</h2><h2 id="6、设置主题"><a href="#6、设置主题" class="headerlink" title="6、设置主题"></a>6、设置主题</h2><img src="/操作系统/linux/如何将ubuntu打造成mac/1-2.png" alt="1-2.png" title="">
+<img src="/操作系统/linux/如何将ubuntu打造成mac/1-3.png" alt="1-3.png" title="">
+<h2 id="7、设置图标"><a href="#7、设置图标" class="headerlink" title="7、设置图标"></a>7、设置图标</h2><img src="/操作系统/linux/如何将ubuntu打造成mac/1-4.png" alt="1-4.png" title="">
+<img src="/操作系统/linux/如何将ubuntu打造成mac/1-5.png" alt="1-5.png" title="">
+<h2 id="8、设置指针"><a href="#8、设置指针" class="headerlink" title="8、设置指针"></a>8、设置指针</h2><img src="/操作系统/linux/如何将ubuntu打造成mac/1-6.png" alt="1-6.png" title="">
+<img src="/操作系统/linux/如何将ubuntu打造成mac/1-7.png" alt="1-7.png" title="">
+<h2 id="9、替换Ubuntu-Desktop为Mac-需重启"><a href="#9、替换Ubuntu-Desktop为Mac-需重启" class="headerlink" title="9、替换Ubuntu Desktop为Mac(需重启)"></a>9、替换Ubuntu Desktop为Mac(需重启)</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> &amp;&amp; wget -O Mac.po http://drive.noobslab.com/data/Mac/change-name-on-panel/mac.po</div><div class="line"><span class="built_in">cd</span> /usr/share/locale/zh_CN/LC_MESSAGES; sudo msgfmt -o unity.mo ~/Mac.po;rm ~/Mac.po;<span class="built_in">cd</span></div></pre></td></tr></table></figure>
+<p><strong>其中 /zh_CN/需替换为本机的locale</strong><br><strong>修改前</strong><br><img src="/操作系统/linux/如何将ubuntu打造成mac/1-8.png" alt="1-8.png" title=""><br><strong>修改后</strong><br><img src="/操作系统/linux/如何将ubuntu打造成mac/1-9.png" alt="1-9.png" title=""></p>
+<h2 id="10、修改启动器-需重启"><a href="#10、修改启动器-需重启" class="headerlink" title="10、修改启动器(需重启)"></a>10、修改启动器(需重启)</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">wget -O launcher_bfb.png http://drive.noobslab.com/data/Mac/launcher-logo/apple/launcher_bfb.png</div><div class="line">sudo mv launcher_bfb.png /usr/share/unity/icons/</div></pre></td></tr></table></figure>
+<p><strong>修改前</strong><br><img src="/操作系统/linux/如何将ubuntu打造成mac/1-10.png" alt="1-10.png" title=""><br><strong>修改后</strong><br><img src="/操作系统/linux/如何将ubuntu打造成mac/1-11.png" alt="1-11.png" title=""></p>
+<h2 id="11、修复libreoffice样式"><a href="#11、修复libreoffice样式" class="headerlink" title="11、修复libreoffice样式"></a>11、修复libreoffice样式</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install libreoffice-style-sifr</div></pre></td></tr></table></figure>
+<p><strong>打开任意一个libreoffice软件，以writer为例</strong><br><img src="/操作系统/linux/如何将ubuntu打造成mac/1-14.png" alt="1-14.png" title=""><br><img src="/操作系统/linux/如何将ubuntu打造成mac/1-15.png" alt="1-15.png" title=""></p>
+<h2 id="12、更改Plank"><a href="#12、更改Plank" class="headerlink" title="12、更改Plank"></a>12、更改Plank</h2><p><strong>打开Plank</strong><br><img src="/操作系统/linux/如何将ubuntu打造成mac/1-16.png" alt="1-16.png" title=""><br><strong>在Plank Ctrl+鼠标右击，弹出菜单</strong><br><img src="/操作系统/linux/如何将ubuntu打造成mac/1-17.png" alt="1-17.png" title=""><br><img src="/操作系统/linux/如何将ubuntu打造成mac/1-18.png" alt="1-18.png" title=""></p>
+<h2 id="13、设置Alert"><a href="#13、设置Alert" class="headerlink" title="13、设置Alert"></a>13、设置Alert</h2><p><strong>打开alert</strong><br><img src="/操作系统/linux/如何将ubuntu打造成mac/1-19.png" alt="1-19.png" title=""><br><strong>设置hot key</strong><br><img src="/操作系统/linux/如何将ubuntu打造成mac/1-20.png" alt="1-20.png" title=""><br><img src="/操作系统/linux/如何将ubuntu打造成mac/1-21.png" alt="1-21.png" title=""></p>
+<h2 id="14、隐藏侧边栏"><a href="#14、隐藏侧边栏" class="headerlink" title="14、隐藏侧边栏"></a>14、隐藏侧边栏</h2><p><strong>打开unity-tweak-tool</strong><br><img src="/操作系统/linux/如何将ubuntu打造成mac/1-22.png" alt="1-22.png" title=""><br><img src="/操作系统/linux/如何将ubuntu打造成mac/1-23.png" alt="1-23.png" title=""></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;img src=&quot;/操作系统/linux/如何将ubuntu打造成mac/1-1.png&quot; alt=&quot;1-1.png&quot; title=&quot;&quot;&gt;
+&lt;h2 id=&quot;1、添加macbuntu源&quot;&gt;&lt;a href=&quot;#1、添加macbuntu源&quot; class=&quot;headerlink&quot; title=&quot;1、添加macbuntu源&quot;&gt;&lt;/a&gt;1、添加macbuntu源&lt;/h2&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;sudo add-apt-repository ppa:noobslab/macbuntu &lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;2、更新&quot;&gt;&lt;a href=&quot;#2、更新&quot; class=&quot;headerlink&quot; title=&quot;2、更新&quot;&gt;&lt;/a&gt;2、更新&lt;/h2&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;sudo apt-get update&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="操作系统" scheme="http://sutong.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+      <category term="linux" scheme="http://sutong.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/"/>
+    
+    
+      <category term="style" scheme="http://sutong.github.io/tags/style/"/>
+    
+      <category term="ubuntu" scheme="http://sutong.github.io/tags/ubuntu/"/>
+    
+      <category term="mac" scheme="http://sutong.github.io/tags/mac/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>禁止git中文文件名转码</title>
+    <link href="http://sutong.github.io/%E5%9B%A2%E9%98%9F%E5%8D%8F%E4%BD%9C/git/%E7%A6%81%E6%AD%A2git%E4%B8%AD%E6%96%87%E6%96%87%E4%BB%B6%E5%90%8D%E8%BD%AC%E7%A0%81/"/>
+    <id>http://sutong.github.io/团队协作/git/禁止git中文文件名转码/</id>
+    <published>2017-03-29T06:27:41.000Z</published>
+    <updated>2017-08-02T00:21:42.604Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="如何实现禁止中文文件名转码"><a href="#如何实现禁止中文文件名转码" class="headerlink" title="如何实现禁止中文文件名转码?"></a>如何实现禁止中文文件名转码?</h2><img src="/团队协作/git/禁止git中文文件名转码/1-1.png" alt="1-1.png" title="">
+<a id="more"></a>
+<h2 id="执行如下命令"><a href="#执行如下命令" class="headerlink" title="执行如下命令"></a>执行如下命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git config --global core.quotepath <span class="literal">false</span></div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;如何实现禁止中文文件名转码&quot;&gt;&lt;a href=&quot;#如何实现禁止中文文件名转码&quot; class=&quot;headerlink&quot; title=&quot;如何实现禁止中文文件名转码?&quot;&gt;&lt;/a&gt;如何实现禁止中文文件名转码?&lt;/h2&gt;&lt;img src=&quot;/团队协作/git/禁止git中文文件名转码/1-1.png&quot; alt=&quot;1-1.png&quot; title=&quot;&quot;&gt;
+    
+    </summary>
+    
+      <category term="团队协作" scheme="http://sutong.github.io/categories/%E5%9B%A2%E9%98%9F%E5%8D%8F%E4%BD%9C/"/>
+    
+      <category term="git" scheme="http://sutong.github.io/categories/%E5%9B%A2%E9%98%9F%E5%8D%8F%E4%BD%9C/git/"/>
+    
+    
+      <category term="git" scheme="http://sutong.github.io/tags/git/"/>
+    
+      <category term="禁止" scheme="http://sutong.github.io/tags/%E7%A6%81%E6%AD%A2/"/>
+    
+      <category term="中文" scheme="http://sutong.github.io/tags/%E4%B8%AD%E6%96%87/"/>
+    
+      <category term="转码" scheme="http://sutong.github.io/tags/%E8%BD%AC%E7%A0%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo安装(ubuntu)</title>
+    <link href="http://sutong.github.io/%E5%8D%9A%E5%AE%A2/hexo/hexo%E5%AE%89%E8%A3%85-ubuntu/"/>
+    <id>http://sutong.github.io/博客/hexo/hexo安装-ubuntu/</id>
+    <published>2017-03-29T06:05:01.000Z</published>
+    <updated>2017-08-02T00:21:42.592Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="1、安装"><a href="#1、安装" class="headerlink" title="1、安装"></a>1、安装<a href="/大前端/nodejs/linux中安装nodejs/" title="nodejs">nodejs</a></h4><h4 id="2、替换为淘宝npm镜像"><a href="#2、替换为淘宝npm镜像" class="headerlink" title="2、替换为淘宝npm镜像"></a>2、替换为淘宝npm镜像</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</div></pre></td></tr></table></figure>
+<h4 id="3、安装hexo"><a href="#3、安装hexo" class="headerlink" title="3、安装hexo"></a>3、安装hexo</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cnpm install -g hexo-cli</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;1、安装&quot;&gt;&lt;a href=&quot;#1、安装&quot; class=&quot;headerlink&quot; title=&quot;1、安装&quot;&gt;&lt;/a&gt;1、安装&lt;a href=&quot;/大前端/nodejs/linux中安装nodejs/&quot; title=&quot;nodejs&quot;&gt;nodejs&lt;/a&gt;&lt;/h4&gt;&lt;h
+    
+    </summary>
+    
+      <category term="博客" scheme="http://sutong.github.io/categories/%E5%8D%9A%E5%AE%A2/"/>
+    
+      <category term="hexo" scheme="http://sutong.github.io/categories/%E5%8D%9A%E5%AE%A2/hexo/"/>
+    
+    
+      <category term="install" scheme="http://sutong.github.io/tags/install/"/>
+    
+      <category term="安装" scheme="http://sutong.github.io/tags/%E5%AE%89%E8%A3%85/"/>
+    
+      <category term="hexo" scheme="http://sutong.github.io/tags/hexo/"/>
+    
+      <category term="ubuntu" scheme="http://sutong.github.io/tags/ubuntu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>oauth2.0-各种授权类型示例代码</title>
+    <link href="http://sutong.github.io/%E5%AE%89%E5%85%A8/oauth2-0/oauth2-0-%E5%90%84%E7%A7%8D%E6%8E%88%E6%9D%83%E7%B1%BB%E5%9E%8B%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81/"/>
+    <id>http://sutong.github.io/安全/oauth2-0/oauth2-0-各种授权类型示例代码/</id>
+    <published>2017-03-20T11:50:12.000Z</published>
+    <updated>2017-08-02T00:21:42.592Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1、authorization-code"><a href="#1、authorization-code" class="headerlink" title="1、authorization_code"></a>1、authorization_code</h2><h3 id="1-1、请求临时令牌"><a href="#1-1、请求临时令牌" class="headerlink" title="1.1、请求临时令牌"></a>1.1、请求临时令牌</h3><p><strong>请求</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https://oauth2server.com/oauth/authorize?client_id=a17c21ed&amp;response_type=code&amp;state=5ca75bd30&amp;redirect_uri=https://oauth2client.com/auth</div></pre></td></tr></table></figure></p>
+<p><strong>响应</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https://oauth2client.com/cb?code=Yzk5ZDczMzRlNDEwY</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p><strong>异常</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">HTTP/1.1 2 Found</div><div class="line">Location: https://oauth2client.com/redirect?error=access_denied</div><div class="line"> &amp;error_description=The+user+denied+the+request</div><div class="line"> &amp;error_uri=https://oauth2server.com/error/access_denied</div><div class="line"> &amp;state=wxyz1234</div></pre></td></tr></table></figure></p>
+<h3 id="1-2、交换获取令牌"><a href="#1-2、交换获取令牌" class="headerlink" title="1.2、交换获取令牌"></a>1.2、交换获取令牌</h3><p><strong>请求</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">POST /oauth/token HTTP/1.1</div><div class="line">Host: oauth2server.com</div><div class="line"> </div><div class="line">code=Yzk5ZDczMzRlNDEwY</div><div class="line">&amp;grant_type=code</div><div class="line">&amp;client_id=mRkZGFjM</div><div class="line">&amp;client_secret=ZGVmMjMz</div></pre></td></tr></table></figure></p>
+<p><strong>响应</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">HTTP/1.1 200 OK</div><div class="line">Content-Type: application/json;charset=utf-8</div><div class="line">Cache-Control: no-store</div><div class="line">Pragma: no-cache</div><div class="line"> </div><div class="line">&#123;</div><div class="line">  &quot;access_token&quot;:&quot;MTQ0NjJkZmQ5OTM2NDE1ZTZjNGZmZjI3&quot;,</div><div class="line">  &quot;token_type&quot;:&quot;bearer&quot;,</div><div class="line">  &quot;expires_in&quot;:3600,</div><div class="line">  &quot;refresh_token&quot;:&quot;IwOGYzYTlmM2YxOTQ5MGE3YmNmMDFkNTVk&quot;,</div><div class="line">  &quot;scope&quot;:&quot;create&quot;,</div><div class="line">  &quot;state&quot;:&quot;12345678&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>异常</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">HTTP/1.1 400 Bad Request</div><div class="line">Content-Type: application/json;charset=UTF-8</div><div class="line">Cache-Control: no-store</div><div class="line">Pragma: no-cache</div><div class="line"> </div><div class="line">&#123;</div><div class="line">  &quot;error&quot;: &quot;invalid_request&quot;,</div><div class="line">  &quot;error_description&quot;: &quot;Request was missing the &apos;redirect_uri&apos; parameter.&quot;,</div><div class="line">  &quot;error_uri&quot;: &quot;See the full API docs at http://oauth2server.com/docs/access_token&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="2、Implicit-Grant"><a href="#2、Implicit-Grant" class="headerlink" title="2、Implicit Grant"></a>2、Implicit Grant</h2><h3 id="2-1、browser-base"><a href="#2-1、browser-base" class="headerlink" title="2.1、browser-base"></a>2.1、browser-base</h3><p><strong>请求</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https://oauth2server.com/oauth/authorize?response_type=token&amp;client_id=mRkZGFjM&amp;state=TY2OTZhZGFk</div></pre></td></tr></table></figure></p>
+<p><strong>响应</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https://oauth2client.com/cb#token=Yzk5ZDczMzRlNDEwY&amp;state=TY2OTZhZGFk</div></pre></td></tr></table></figure></p>
+<h3 id="2-2、mobile-and-native-app"><a href="#2-2、mobile-and-native-app" class="headerlink" title="2.2、mobile and native app"></a>2.2、mobile and native app</h3><p><strong>请求</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https://www.arcgis.com/sharing/oauth2/authorize?client_id=eKNjzFFjH9A1ysYd&amp;response_type=token&amp;redirect_uri=exampleapp://auth</div></pre></td></tr></table></figure></p>
+<p><strong>响应</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">oauthdemo://auth#access_token=lS0KgilpRsT07qT_iMOg9bBSaWqODC1g061nSLsa8gV2GYtyynB6A-abCsWrDTvN9p7rI0kWa4u-ORXuFUQ7QGxiiniwpCSIV1AqzoLRHF1hYcI4joeDPOzZa9PZigiudtefciZy5&amp;expires_in=7199&amp;username=aaronpk</div></pre></td></tr></table></figure></p>
+<h2 id="3、Paasword-Grant"><a href="#3、Paasword-Grant" class="headerlink" title="3、Paasword Grant"></a>3、Paasword Grant</h2><p><strong>请求</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">POST /oauth/token HTTP/1.1</div><div class="line">Host: oauth2server.com</div><div class="line"> </div><div class="line">grant_type=password</div><div class="line">&amp;amp;username=user@example.com</div><div class="line">&amp;amp;password=1234luggage</div><div class="line">&amp;amp;client_id=xxxxxxxxxx</div><div class="line">&amp;amp;client_secret=xxxxxxxxxx</div></pre></td></tr></table></figure></p>
+<h2 id="4、Client-Credentials"><a href="#4、Client-Credentials" class="headerlink" title="4、Client Credentials"></a>4、Client Credentials</h2><p><strong>概述</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">访问自身资源，不代表用户行为</div></pre></td></tr></table></figure></p>
+<p><strong>请求</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">POST /oauth/token HTTP/1.1</div><div class="line">Host: oauth2server.com</div><div class="line"> </div><div class="line">grant_type=client_credentials</div><div class="line">&amp;client_id=xxxxxxxxxx</div><div class="line">&amp;client_secret=xxxxxxxxxx</div></pre></td></tr></table></figure></p>
+<h2 id="5、refresh-token"><a href="#5、refresh-token" class="headerlink" title="5、refresh token"></a>5、refresh token</h2><p><strong>注意</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">如果包含scope,需与上一次的scope相同</div></pre></td></tr></table></figure></p>
+<p><strong>请求</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">POST /oauth/token HTTP/1.1</div><div class="line">Host: oauth2server.com</div><div class="line"> </div><div class="line">grant_type=refresh_token</div><div class="line">&amp;refresh_token=xxxxxxxxxxx</div><div class="line">&amp;client_id=xxxxxxxxxx</div><div class="line">&amp;client_secret=xxxxxxxxxx</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;1、authorization-code&quot;&gt;&lt;a href=&quot;#1、authorization-code&quot; class=&quot;headerlink&quot; title=&quot;1、authorization_code&quot;&gt;&lt;/a&gt;1、authorization_code&lt;/h2&gt;&lt;h3 id=&quot;1-1、请求临时令牌&quot;&gt;&lt;a href=&quot;#1-1、请求临时令牌&quot; class=&quot;headerlink&quot; title=&quot;1.1、请求临时令牌&quot;&gt;&lt;/a&gt;1.1、请求临时令牌&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;请求&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;https://oauth2server.com/oauth/authorize?client_id=a17c21ed&amp;amp;response_type=code&amp;amp;state=5ca75bd30&amp;amp;redirect_uri=https://oauth2client.com/auth&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;响应&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;https://oauth2client.com/cb?code=Yzk5ZDczMzRlNDEwY&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="安全" scheme="http://sutong.github.io/categories/%E5%AE%89%E5%85%A8/"/>
+    
+      <category term="oauth2.0" scheme="http://sutong.github.io/categories/%E5%AE%89%E5%85%A8/oauth2-0/"/>
+    
+    
+      <category term="oauth2.0" scheme="http://sutong.github.io/tags/oauth2-0/"/>
+    
+      <category term="授权类型" scheme="http://sutong.github.io/tags/%E6%8E%88%E6%9D%83%E7%B1%BB%E5%9E%8B/"/>
+    
+      <category term="示例" scheme="http://sutong.github.io/tags/%E7%A4%BA%E4%BE%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>oauth2.0-授权过程</title>
+    <link href="http://sutong.github.io/%E5%AE%89%E5%85%A8/oauth2-0/oauth2-0-%E6%8E%88%E6%9D%83%E8%BF%87%E7%A8%8B/"/>
+    <id>http://sutong.github.io/安全/oauth2-0/oauth2-0-授权过程/</id>
+    <published>2017-03-20T11:42:28.000Z</published>
+    <updated>2017-08-02T00:21:42.592Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1、invalid-redirect-uri"><a href="#1、invalid-redirect-uri" class="headerlink" title="1、invalid redirect uri"></a>1、invalid redirect uri</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">包含以下情况</div><div class="line">无效uri</div><div class="line">参数丢失</div><div class="line">uri与注册的不匹配</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="2、Verifying-the-Authorization-Request"><a href="#2、Verifying-the-Authorization-Request" class="headerlink" title="2、Verifying the Authorization Request"></a>2、Verifying the Authorization Request</h2><h3 id="2-1、verify-client-id"><a href="#2-1、verify-client-id" class="headerlink" title="2.1、verify client id"></a>2.1、verify client id</h3><h3 id="2-2、verify-redirect-uri"><a href="#2-2、verify-redirect-uri" class="headerlink" title="2.2、verify redirect uri"></a>2.2、verify redirect uri</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">如果服务端允许APP注册多个redirect uri，那么需要分两步校验。</div><div class="line">如果请求中包含redirect uri，则服务端需确认它是有效的。</div><div class="line">如果请求中不包含redirect uri,且只注册了一个URI，使用注册的redirect uri。</div><div class="line">如果请求中不包含redirect uri,且未注册URI，有误。</div></pre></td></tr></table></figure>
+<h3 id="2-3、verify-response-type"><a href="#2-3、verify-response-type" class="headerlink" title="2.3、verify response type"></a>2.3、verify response type</h3><h3 id="2-4、verify-scope"><a href="#2-4、verify-scope" class="headerlink" title="2.4、verify scope"></a>2.4、verify scope</h3><h3 id="2-5、save-state"><a href="#2-5、save-state" class="headerlink" title="2.5、save state"></a>2.5、save state</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">保存该值，并将它包含在获取access token的响应中</div></pre></td></tr></table></figure>
+<h2 id="3、用户登录"><a href="#3、用户登录" class="headerlink" title="3、用户登录"></a>3、用户登录</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">一般，登录成功就相当于授权成功。</div></pre></td></tr></table></figure>
+<h2 id="4、授权界面"><a href="#4、授权界面" class="headerlink" title="4、授权界面"></a>4、授权界面</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">包含服务端信息（如网站名称、网站logo，便于用户识别)，用户身份（如姓名、照片，便于用户知道用那个账号操作），APP信息（APP名称、</div><div class="line">app网址、app logo）、范围、取消和同意按钮</div></pre></td></tr></table></figure>
+<h2 id="5、临时令牌"><a href="#5、临时令牌" class="headerlink" title="5、临时令牌"></a>5、临时令牌</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">下发后，很短时间需过期，推荐10分钟，大多数是30-60秒，长度是任意的，需声明,最好的实现方案是自我包含（避免在数据库中存储临时令牌，</div><div class="line">通常通过加密库或jws），需包含client_id、redirect_uri（用在下发access_token校验）、user info(如user id)、过期时间、uid(校验是否被使用过，一般使用数据库id或随机的字符串)</div></pre></td></tr></table></figure>
+<h2 id="6、scope"><a href="#6、scope" class="headerlink" title="6、scope"></a>6、scope</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">主要是为了限制权限，最好是读写分离</div></pre></td></tr></table></figure>
+<h2 id="7、redirect-uri-validation"><a href="#7、redirect-uri-validation" class="headerlink" title="7、redirect uri validation"></a>7、redirect uri validation</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">当开发者新建app注册redirect uri时（不包含fragment）；</div><div class="line">授权请求时；</div><div class="line">交换获取令牌时；</div></pre></td></tr></table></figure>
+<h2 id="8、请求令牌"><a href="#8、请求令牌" class="headerlink" title="8、请求令牌"></a>8、请求令牌</h2><h3 id="8-1、redirect-uri"><a href="#8-1、redirect-uri" class="headerlink" title="8.1、redirect_uri"></a>8.1、redirect_uri</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">如果授权请求包含了redirect uri,则token请求必须包含redirect uri</div></pre></td></tr></table></figure>
+<h3 id="8-2、response"><a href="#8-2、response" class="headerlink" title="8.2、response"></a>8.2、response</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">include the additional Cache-Control: no-store and Pragma: no-cache HTTP headers to ensure clients do not cache this request</div></pre></td></tr></table></figure>
+<h3 id="8-3、令牌生命周期"><a href="#8-3、令牌生命周期" class="headerlink" title="8.3、令牌生命周期"></a>8.3、令牌生命周期</h3><h4 id="8-3-1、short-lived-access-token-and-long-live-refresh-token"><a href="#8-3-1、short-lived-access-token-and-long-live-refresh-token" class="headerlink" title="8.3.1、short-lived access token and long live refresh token"></a>8.3.1、short-lived access token and long live refresh token</h4><p><strong>什么情况下使用</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">使用自包含access token;</div><div class="line">限制access token泄露风险；</div><div class="line">提供SDK控制access token刷新；</div></pre></td></tr></table></figure></p>
+<h4 id="8-3-2、short-lived-access-token-and-no-refresh-token"><a href="#8-3-2、short-lived-access-token-and-no-refresh-token" class="headerlink" title="8.3.2、short-lived access token and no refresh token"></a>8.3.2、short-lived access token and no refresh token</h4><p><strong>什么情况下使用</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">最大保证access token泄露风险；</div><div class="line">促使用户意识到在授权给第三方应用；</div><div class="line">不希望第三方应用离线访问用户数据；</div></pre></td></tr></table></figure></p>
+<h4 id="8-3-3、non-expiring-access-token"><a href="#8-3-3、non-expiring-access-token" class="headerlink" title="8.3.3、non-expiring access token"></a>8.3.3、non-expiring access token</h4><p><strong>什么情况下使用</strong><br>```<br>有机制回收access token（如存储在数据库）;<br>泄露不会造成大风险；<br>提供简单授权机制；<br>希望第三方应用离线访问用户数据；</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;1、invalid-redirect-uri&quot;&gt;&lt;a href=&quot;#1、invalid-redirect-uri&quot; class=&quot;headerlink&quot; title=&quot;1、invalid redirect uri&quot;&gt;&lt;/a&gt;1、invalid redirect uri&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;包含以下情况&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;无效uri&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;参数丢失&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;uri与注册的不匹配&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="安全" scheme="http://sutong.github.io/categories/%E5%AE%89%E5%85%A8/"/>
+    
+      <category term="oauth2.0" scheme="http://sutong.github.io/categories/%E5%AE%89%E5%85%A8/oauth2-0/"/>
+    
+    
+      <category term="oauth2.0" scheme="http://sutong.github.io/tags/oauth2-0/"/>
+    
+      <category term="授权" scheme="http://sutong.github.io/tags/%E6%8E%88%E6%9D%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>oauth2.0-注册相关</title>
+    <link href="http://sutong.github.io/%E5%AE%89%E5%85%A8/oauth2-0/oauth2-0-%E6%B3%A8%E5%86%8C%E7%9B%B8%E5%85%B3/"/>
+    <id>http://sutong.github.io/安全/oauth2-0/oauth2-0-注册相关/</id>
+    <published>2017-03-20T11:37:35.000Z</published>
+    <updated>2017-08-02T00:21:42.592Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1、概述"><a href="#1、概述" class="headerlink" title="1、概述"></a>1、概述</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">APP名称、APP描述、APP icon、HOME PAGE、回调地址、privacy policy、short tagline、是否公开</div></pre></td></tr></table></figure>
+<h2 id="2、client-type"><a href="#2、client-type" class="headerlink" title="2、client type"></a>2、client type</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">根据是否公开</div><div class="line">一般来说，server-side是私有，而browser-base，mobile and native app是公有的</div><div class="line">公有的一般是不生成client_secret，而私有的是不成client_secret</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="3、client-id"><a href="#3、client-id" class="headerlink" title="3、client_id"></a>3、client_id</h2><p><strong>长度</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">一般采用32-character hex string</div></pre></td></tr></table></figure></p>
+<h2 id="4、client-secret"><a href="#4、client-secret" class="headerlink" title="4、client_secret"></a>4、client_secret</h2><p><strong>长度</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">use a cryptographically-secure library to generate a 256-bit value and converting it to a hexadecimal representation</div></pre></td></tr></table></figure></p>
+<p><strong>保存方式</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">加密或散列（仅展现一次，需客户端保存）</div></pre></td></tr></table></figure></p>
+<p><strong>安全</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">查看需校验用户身份（如输入密码）</div></pre></td></tr></table></figure></p>
+<h2 id="5、delete-application"><a href="#5、delete-application" class="headerlink" title="5、delete application"></a>5、delete application</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">应展示删除该应用的后果，如影响的用户数，</div><div class="line">应回收所有的access token及其他下发的凭证（如auth code、refresh token）</div></pre></td></tr></table></figure>
+<h2 id="6、reset-secret"><a href="#6、reset-secret" class="headerlink" title="6、reset secret"></a>6、reset secret</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">不必要使access token 失效</div><div class="line">无法使用老的secret更新access token</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;1、概述&quot;&gt;&lt;a href=&quot;#1、概述&quot; class=&quot;headerlink&quot; title=&quot;1、概述&quot;&gt;&lt;/a&gt;1、概述&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;APP名称、APP描述、APP icon、HOME PAGE、回调地址、privacy policy、short tagline、是否公开&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;2、client-type&quot;&gt;&lt;a href=&quot;#2、client-type&quot; class=&quot;headerlink&quot; title=&quot;2、client type&quot;&gt;&lt;/a&gt;2、client type&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;根据是否公开&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;一般来说，server-side是私有，而browser-base，mobile and native app是公有的&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;公有的一般是不生成client_secret，而私有的是不成client_secret&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="安全" scheme="http://sutong.github.io/categories/%E5%AE%89%E5%85%A8/"/>
+    
+      <category term="oauth2.0" scheme="http://sutong.github.io/categories/%E5%AE%89%E5%85%A8/oauth2-0/"/>
+    
+    
+      <category term="oauth2.0" scheme="http://sutong.github.io/tags/oauth2-0/"/>
+    
+      <category term="注册" scheme="http://sutong.github.io/tags/%E6%B3%A8%E5%86%8C/"/>
+    
+      <category term="register" scheme="http://sutong.github.io/tags/register/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>markdown学习</title>
+    <link href="http://sutong.github.io/markdown/markdown%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://sutong.github.io/markdown/markdown学习/</id>
+    <published>2016-02-18T05:29:32.000Z</published>
+    <updated>2017-08-02T00:21:42.592Z</updated>
+    
+    <content type="html"><![CDATA[<p>1.标题设置（让字体变大，和word的标题意思一样）</p>
+<pre><code>在Markdown当中设置标题，有两种方式：
+第一种：通过在文字下方添加“=”和“-”，他们分别表示一级标题和二级标题。
+第二种：在文字开头加上 “#”，通过“#”数量表示几级标题。（一共只有1~6级标题，1级标题字体最大）
+</code></pre><p>测试<br>=<br>测试<br>-</p>
+<p>#测试</p>
+<p>##测试<br><a id="more"></a><br>2.块注释（blockquote）</p>
+<pre><code>通过在文字开头添加“&gt;”表示块注释。（当&gt;和文字之间添加五个blank时，块注释的文字会有变化。）
+</code></pre><p>第一种</p>
+<blockquote>
+<p>测试</p>
+</blockquote>
+<p>第二种</p>
+<blockquote>
+<pre><code>测试
+</code></pre></blockquote>
+<p>3.斜体</p>
+<pre><code>将需要设置为斜体的文字两端使用1个“*”或者“_”夹起来
+</code></pre><p>测试<em>测试</em><em>测试</em></p>
+<p>4.粗体</p>
+<pre><code>将需要设置为斜体的文字两端使用2个“*”或者“_”夹起来
+</code></pre><p>测试<strong>测试</strong><strong>测试</strong></p>
+<p>5.无序列表</p>
+<pre><code>在文字开头添加(*, +, and -)实现无序列表。但是要注意在(*, +, and -)和文字之间需要添加空格。（建议：一个文档中只是用一种无序列表的表示方式）
+</code></pre><ul>
+<li>apple</li>
+<li>banana</li>
+<li>pine</li>
+</ul>
+<ul>
+<li>apple</li>
+<li>banana</li>
+<li>pine</li>
+</ul>
+<ul>
+<li>apple</li>
+<li>banana</li>
+<li>pine</li>
+</ul>
+<p>6.有序列表</p>
+<pre><code>使用数字后面跟上句号。（还要有空格）
+</code></pre><ol>
+<li>第一名</li>
+<li>第二名</li>
+<li>第三名</li>
+</ol>
+<p>7.链接（Links）</p>
+<pre><code>Markdown中有两种方式，实现链接，分别为内联方式和引用方式。
+内联方式：This is an [example link](http://example.com/).
+引用方式：I get 10 times more traffic from [Google][1]than from[Yahoo][2] or [MSN][3].  
+[1]: http://google.com/     &quot;Google&quot;
+[2]: http://search.yahoo.com/  &quot;Yahoo Search&quot; 
+[3]: http://search.msn.com/    &quot;MSN Search&quot;
+</code></pre><p>点此进入<a href="https://www.baidu.com" target="_blank" rel="external">百度</a></p>
+<p>点此进入 <a href="http://images.china.cn/attachement/jpg/site1000/20101215/001aa0ba776e0e72e3af22.jpg" title="小鸟" target="_blank" rel="external">百度</a> <a href="http://images.china.cn/attachement/jpg/site1000/20101215/001aa0ba776e0e72e3af22.jpg" title="小鸟" target="_blank" rel="external">百度</a> <a href="http://www.baidu.com" title="百度" target="_blank" rel="external">百度</a></p>
+<p>8.图片（Images）</p>
+<pre><code>图片的处理方式和链接的处理方式，非常的类似。
+内联方式：![alttext](/path/to/img.jpg &quot;Title&quot;) 
+引用方式：![alt text][id][id]: /path/to/img.jpg &quot;Title&quot;
+</code></pre><p><img src="http://images.china.cn/attachement/jpg/site1000/20101215/001aa0ba776e0e72e3af22.jpg" alt="小鸟" title="小鸟"></p>
+<p>图片1<img src="http://images.china.cn/attachement/jpg/site1000/20101215/001aa0ba776e0e72e3af22.jpg" alt="小鸟" title="小鸟">图片2<img src="http://images.china.cn/attachement/jpg/site1000/20101215/001aa0ba776e0e72e3af22.jpg" alt="小鸟" title="小鸟"></p>
+<p>9.代码（HTML中所谓的Code）</p>
+<pre><code>实现方式有两种：
+第一种：简单文字出现一个代码框。使用`&lt;blockquote&gt;`。（`不是单引号而是左上角的ESC下面~中的`）
+第二种：大片文字需要实现代码框。使用Tab和四个空格。
+</code></pre><p>第一种方式</p>
+<p><code>public class Student
+    {
+        private String nae;
+        private int age;
+        public String getName
+        {  
+        return name;    
+        }
+    }</code><br>第二种方</p>
+<pre><code>{&quot;name&quot;:&quot;测试&quot;,age:12}
+</code></pre><p>或</p>
+<pre><code>{&quot;name&quot;:&quot;测试&quot;,age:12}
+</code></pre><p>10.脚注（footnote</p>
+<pre><code>实现方式如下：
+hello[^hello]
+[^hello]: hi
+</code></pre><p>hello<a href="hi">^hello</a></p>
+<p>11.下划线</p>
+<pre><code>在空白行下方添加三条“-”横线。（前面讲过在文字下方添加“-”，实现的2级标题）
+</code></pre><hr>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;1.标题设置（让字体变大，和word的标题意思一样）&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;在Markdown当中设置标题，有两种方式：
+第一种：通过在文字下方添加“=”和“-”，他们分别表示一级标题和二级标题。
+第二种：在文字开头加上 “#”，通过“#”数量表示几级标题。（一共只有1~6级标题，1级标题字体最大）
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;测试&lt;br&gt;=&lt;br&gt;测试&lt;br&gt;-&lt;/p&gt;
+&lt;p&gt;#测试&lt;/p&gt;
+&lt;p&gt;##测试&lt;br&gt;
+    
+    </summary>
+    
+      <category term="markdown" scheme="http://sutong.github.io/categories/markdown/"/>
+    
+    
+      <category term="markdown" scheme="http://sutong.github.io/tags/markdown/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>keytool-maven-plugin的简单使用</title>
+    <link href="http://sutong.github.io/%E6%9E%84%E5%BB%BA/maven/keytool-maven-plugin%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/"/>
+    <id>http://sutong.github.io/构建/maven/keytool-maven-plugin的简单使用/</id>
+    <published>2016-02-15T05:36:09.000Z</published>
+    <updated>2017-08-02T00:21:42.592Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="在pom文件的plugin节点中加入如下内容"><a href="#在pom文件的plugin节点中加入如下内容" class="headerlink" title="在pom文件的plugin节点中加入如下内容"></a>在pom文件的plugin节点中加入如下内容</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">plugin</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.codehaus.mojo<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>keytool-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>1.4<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">configuration</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">keystore</span>&gt;</span>$&#123;basedir&#125;/src/main/resources/yands.keystore<span class="tag">&lt;/<span class="name">keystore</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">dname</span>&gt;</span>cn=localhost<span class="tag">&lt;/<span class="name">dname</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">keypass</span>&gt;</span>changeit<span class="tag">&lt;/<span class="name">keypass</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">storepass</span>&gt;</span>changeit<span class="tag">&lt;/<span class="name">storepass</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">alias</span>&gt;</span>yands<span class="tag">&lt;/<span class="name">alias</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">keyalg</span>&gt;</span>RSA<span class="tag">&lt;/<span class="name">keyalg</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">file</span>&gt;</span>$&#123;basedir&#125;/src/main/resources/yands.cer<span class="tag">&lt;/<span class="name">file</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="解释如下"><a href="#解释如下" class="headerlink" title="解释如下"></a>解释如下</h2><img src="/构建/maven/keytool-maven-plugin的简单使用/1-1.jpg" alt="1-1.jpg" title="">
+<a id="more"></a>
+<h2 id="步骤如下"><a href="#步骤如下" class="headerlink" title="步骤如下"></a>步骤如下</h2><h4 id="1、删除已经存在的keystore文件"><a href="#1、删除已经存在的keystore文件" class="headerlink" title="1、删除已经存在的keystore文件"></a>1、删除已经存在的keystore文件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">keytool:clean</div></pre></td></tr></table></figure>
+<h4 id="2、生成keystore文件"><a href="#2、生成keystore文件" class="headerlink" title="2、生成keystore文件"></a>2、生成keystore文件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">keytool:generateKeyPair</div></pre></td></tr></table></figure>
+<h4 id="3、生成客户端使用cer文件"><a href="#3、生成客户端使用cer文件" class="headerlink" title="3、生成客户端使用cer文件"></a>3、生成客户端使用cer文件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">keytool:exportCertificate</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;在pom文件的plugin节点中加入如下内容&quot;&gt;&lt;a href=&quot;#在pom文件的plugin节点中加入如下内容&quot; class=&quot;headerlink&quot; title=&quot;在pom文件的plugin节点中加入如下内容&quot;&gt;&lt;/a&gt;在pom文件的plugin节点中加入如下内容&lt;/h2&gt;&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;plugin&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;groupId&lt;/span&gt;&amp;gt;&lt;/span&gt;org.codehaus.mojo&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;groupId&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;artifactId&lt;/span&gt;&amp;gt;&lt;/span&gt;keytool-maven-plugin&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;artifactId&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;version&lt;/span&gt;&amp;gt;&lt;/span&gt;1.4&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;version&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;configuration&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;keystore&lt;/span&gt;&amp;gt;&lt;/span&gt;$&amp;#123;basedir&amp;#125;/src/main/resources/yands.keystore&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;keystore&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;dname&lt;/span&gt;&amp;gt;&lt;/span&gt;cn=localhost&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;dname&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;keypass&lt;/span&gt;&amp;gt;&lt;/span&gt;changeit&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;keypass&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;storepass&lt;/span&gt;&amp;gt;&lt;/span&gt;changeit&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;storepass&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;alias&lt;/span&gt;&amp;gt;&lt;/span&gt;yands&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;alias&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;keyalg&lt;/span&gt;&amp;gt;&lt;/span&gt;RSA&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;keyalg&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;file&lt;/span&gt;&amp;gt;&lt;/span&gt;$&amp;#123;basedir&amp;#125;/src/main/resources/yands.cer&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;file&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;configuration&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;plugin&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;解释如下&quot;&gt;&lt;a href=&quot;#解释如下&quot; class=&quot;headerlink&quot; title=&quot;解释如下&quot;&gt;&lt;/a&gt;解释如下&lt;/h2&gt;&lt;img src=&quot;/构建/maven/keytool-maven-plugin的简单使用/1-1.jpg&quot; alt=&quot;1-1.jpg&quot; title=&quot;&quot;&gt;
+    
+    </summary>
+    
+      <category term="构建" scheme="http://sutong.github.io/categories/%E6%9E%84%E5%BB%BA/"/>
+    
+      <category term="maven" scheme="http://sutong.github.io/categories/%E6%9E%84%E5%BB%BA/maven/"/>
+    
+    
+      <category term="maven" scheme="http://sutong.github.io/tags/maven/"/>
+    
+      <category term="keytool-maven-plugin" scheme="http://sutong.github.io/tags/keytool-maven-plugin/"/>
+    
+  </entry>
+  
+</feed>
