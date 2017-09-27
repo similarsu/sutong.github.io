@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sutong.github.io/"/>
-  <updated>2017-09-19T03:36:45.279Z</updated>
+  <updated>2017-09-27T09:09:06.718Z</updated>
   <id>http://sutong.github.io/</id>
   
   <author>
@@ -14,6 +14,46 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>git发布正式版本流程</title>
+    <link href="http://sutong.github.io/%E5%9B%A2%E9%98%9F%E5%8D%8F%E4%BD%9C/git/git%E6%AD%A3%E5%BC%8F%E7%89%88%E6%9C%AC%E5%8F%91%E5%B8%83%E6%B5%81%E7%A8%8B/"/>
+    <id>http://sutong.github.io/团队协作/git/git正式版本发布流程/</id>
+    <published>2017-09-27T08:51:42.000Z</published>
+    <updated>2017-09-27T09:09:06.718Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">1.0.0-SNAPSHOT开发完成后，需要发布正式版本1.0.0</div></pre></td></tr></table></figure>
+<h2 id="1、创建预发布分支"><a href="#1、创建预发布分支" class="headerlink" title="1、创建预发布分支"></a>1、创建预发布分支</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git checkout -b release-1.0.0 develop</div></pre></td></tr></table></figure>
+<h2 id="2、修改版本号"><a href="#2、修改版本号" class="headerlink" title="2、修改版本号"></a>2、修改版本号</h2><h2 id="3、提交修改"><a href="#3、提交修改" class="headerlink" title="3、提交修改"></a>3、提交修改</h2><h2 id="4、切换到master分支"><a href="#4、切换到master分支" class="headerlink" title="4、切换到master分支"></a>4、切换到master分支</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git checkout master</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="5、合并到master分支"><a href="#5、合并到master分支" class="headerlink" title="5、合并到master分支"></a>5、合并到master分支</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git merge --no-ff release-1.0.0</div></pre></td></tr></table></figure>
+<h2 id="6、做标签"><a href="#6、做标签" class="headerlink" title="6、做标签"></a>6、做标签</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git tag -a 1.0.0</div></pre></td></tr></table></figure>
+<h2 id="7、切换到develop分支"><a href="#7、切换到develop分支" class="headerlink" title="7、切换到develop分支"></a>7、切换到develop分支</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git checkout develop</div></pre></td></tr></table></figure>
+<h2 id="8、合并到develop"><a href="#8、合并到develop" class="headerlink" title="8、合并到develop"></a>8、合并到develop</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git merge --no-ff release-1.0.0</div></pre></td></tr></table></figure>
+<h2 id="9、删除预发布分支"><a href="#9、删除预发布分支" class="headerlink" title="9、删除预发布分支"></a>9、删除预发布分支</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git branch -d release-1.0.0</div></pre></td></tr></table></figure>
+<h2 id="10、推送到远程仓库"><a href="#10、推送到远程仓库" class="headerlink" title="10、推送到远程仓库"></a>10、推送到远程仓库</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git push origin master</div><div class="line">git push origin develop</div><div class="line">git push origin 1.0.0</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1.0.0-SNAPSHOT开发完成后，需要发布正式版本1.0.0&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;1、创建预发布分支&quot;&gt;&lt;a href=&quot;#1、创建预发布分支&quot; class=&quot;headerlink&quot; title=&quot;1、创建预发布分支&quot;&gt;&lt;/a&gt;1、创建预发布分支&lt;/h2&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;git checkout -b release-1.0.0 develop&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;2、修改版本号&quot;&gt;&lt;a href=&quot;#2、修改版本号&quot; class=&quot;headerlink&quot; title=&quot;2、修改版本号&quot;&gt;&lt;/a&gt;2、修改版本号&lt;/h2&gt;&lt;h2 id=&quot;3、提交修改&quot;&gt;&lt;a href=&quot;#3、提交修改&quot; class=&quot;headerlink&quot; title=&quot;3、提交修改&quot;&gt;&lt;/a&gt;3、提交修改&lt;/h2&gt;&lt;h2 id=&quot;4、切换到master分支&quot;&gt;&lt;a href=&quot;#4、切换到master分支&quot; class=&quot;headerlink&quot; title=&quot;4、切换到master分支&quot;&gt;&lt;/a&gt;4、切换到master分支&lt;/h2&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;git checkout master&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="团队协作" scheme="http://sutong.github.io/categories/%E5%9B%A2%E9%98%9F%E5%8D%8F%E4%BD%9C/"/>
+    
+      <category term="git" scheme="http://sutong.github.io/categories/%E5%9B%A2%E9%98%9F%E5%8D%8F%E4%BD%9C/git/"/>
+    
+    
+      <category term="git" scheme="http://sutong.github.io/tags/git/"/>
+    
+      <category term="发布" scheme="http://sutong.github.io/tags/%E5%8F%91%E5%B8%83/"/>
+    
+      <category term="正式" scheme="http://sutong.github.io/tags/%E6%AD%A3%E5%BC%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>如何按列去除重复数据（linux）</title>
@@ -697,44 +737,6 @@
       <category term="oauth2.0" scheme="http://sutong.github.io/tags/oauth2-0/"/>
     
       <category term="授权" scheme="http://sutong.github.io/tags/%E6%8E%88%E6%9D%83/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>oauth2.0-注册相关</title>
-    <link href="http://sutong.github.io/%E5%AE%89%E5%85%A8/oauth2-0/oauth2-0-%E6%B3%A8%E5%86%8C%E7%9B%B8%E5%85%B3/"/>
-    <id>http://sutong.github.io/安全/oauth2-0/oauth2-0-注册相关/</id>
-    <published>2017-03-20T11:37:35.000Z</published>
-    <updated>2017-08-02T00:21:42.592Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="1、概述"><a href="#1、概述" class="headerlink" title="1、概述"></a>1、概述</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">APP名称、APP描述、APP icon、HOME PAGE、回调地址、privacy policy、short tagline、是否公开</div></pre></td></tr></table></figure>
-<h2 id="2、client-type"><a href="#2、client-type" class="headerlink" title="2、client type"></a>2、client type</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">根据是否公开</div><div class="line">一般来说，server-side是私有，而browser-base，mobile and native app是公有的</div><div class="line">公有的一般是不生成client_secret，而私有的是不成client_secret</div></pre></td></tr></table></figure>
-<a id="more"></a>
-<h2 id="3、client-id"><a href="#3、client-id" class="headerlink" title="3、client_id"></a>3、client_id</h2><p><strong>长度</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">一般采用32-character hex string</div></pre></td></tr></table></figure></p>
-<h2 id="4、client-secret"><a href="#4、client-secret" class="headerlink" title="4、client_secret"></a>4、client_secret</h2><p><strong>长度</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">use a cryptographically-secure library to generate a 256-bit value and converting it to a hexadecimal representation</div></pre></td></tr></table></figure></p>
-<p><strong>保存方式</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">加密或散列（仅展现一次，需客户端保存）</div></pre></td></tr></table></figure></p>
-<p><strong>安全</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">查看需校验用户身份（如输入密码）</div></pre></td></tr></table></figure></p>
-<h2 id="5、delete-application"><a href="#5、delete-application" class="headerlink" title="5、delete application"></a>5、delete application</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">应展示删除该应用的后果，如影响的用户数，</div><div class="line">应回收所有的access token及其他下发的凭证（如auth code、refresh token）</div></pre></td></tr></table></figure>
-<h2 id="6、reset-secret"><a href="#6、reset-secret" class="headerlink" title="6、reset secret"></a>6、reset secret</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">不必要使access token 失效</div><div class="line">无法使用老的secret更新access token</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;1、概述&quot;&gt;&lt;a href=&quot;#1、概述&quot; class=&quot;headerlink&quot; title=&quot;1、概述&quot;&gt;&lt;/a&gt;1、概述&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;APP名称、APP描述、APP icon、HOME PAGE、回调地址、privacy policy、short tagline、是否公开&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&quot;2、client-type&quot;&gt;&lt;a href=&quot;#2、client-type&quot; class=&quot;headerlink&quot; title=&quot;2、client type&quot;&gt;&lt;/a&gt;2、client type&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;根据是否公开&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;一般来说，server-side是私有，而browser-base，mobile and native app是公有的&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;公有的一般是不生成client_secret，而私有的是不成client_secret&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-      <category term="安全" scheme="http://sutong.github.io/categories/%E5%AE%89%E5%85%A8/"/>
-    
-      <category term="oauth2.0" scheme="http://sutong.github.io/categories/%E5%AE%89%E5%85%A8/oauth2-0/"/>
-    
-    
-      <category term="oauth2.0" scheme="http://sutong.github.io/tags/oauth2-0/"/>
-    
-      <category term="注册" scheme="http://sutong.github.io/tags/%E6%B3%A8%E5%86%8C/"/>
-    
-      <category term="register" scheme="http://sutong.github.io/tags/register/"/>
     
   </entry>
   
