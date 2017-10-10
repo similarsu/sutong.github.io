@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sutong.github.io/"/>
-  <updated>2017-09-28T08:23:27.438Z</updated>
+  <updated>2017-10-10T09:26:46.733Z</updated>
   <id>http://sutong.github.io/</id>
   
   <author>
@@ -14,6 +14,43 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>flex布局</title>
+    <link href="http://sutong.github.io/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/react-native/flex%E5%B8%83%E5%B1%80/"/>
+    <id>http://sutong.github.io/移动开发/react-native/flex布局/</id>
+    <published>2017-10-10T09:22:30.000Z</published>
+    <updated>2017-10-10T09:26:46.733Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1、flexDirection-column-row"><a href="#1、flexDirection-column-row" class="headerlink" title="1、flexDirection(column,row)"></a>1、flexDirection(column,row)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">默认值:column,即竖直方向</div></pre></td></tr></table></figure>
+<h2 id="2、justifyContent-flex-start-center-flex-end-space-around-space-between"><a href="#2、justifyContent-flex-start-center-flex-end-space-around-space-between" class="headerlink" title="2、justifyContent(flex-start, center, flex-end, space-around,  space-between)"></a>2、justifyContent(flex-start, center, flex-end, space-around,  space-between)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">默认值：flex-start</div><div class="line">当为column,竖直看；</div><div class="line">当为row,水平看；</div></pre></td></tr></table></figure>
+<h2 id="3、alignItem-flex-start-center-flex-end-stretch"><a href="#3、alignItem-flex-start-center-flex-end-stretch" class="headerlink" title="3、alignItem(flex-start, center, flex-end, stretch)"></a>3、alignItem(flex-start, center, flex-end, stretch)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">默认值：stretch</div><div class="line">与justifyContent相反</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="a、stretch"><a href="#a、stretch" class="headerlink" title="a、stretch"></a>a、stretch</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">起效条件</div><div class="line">当flexDirection为row,且未指定height</div><div class="line">或</div><div class="line">当flexDirection为cloumn,且未指定width,</div><div class="line">该起效条件下，若alignItem指定其他值，不显示。</div></pre></td></tr></table></figure>
+<h2 id="4、flex"><a href="#4、flex" class="headerlink" title="4、flex"></a>4、flex</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">子组件能够充满父容器剩余空间必须父容器的尺寸不为 0 ，</div><div class="line">如果父容器既没有指定width、height，同时也没有设定flex：1,</div><div class="line">那么子组件将不会显示（即使子组件设置了flex）。</div><div class="line">父组件默认设置flex：1（默认充满整个剩余空间）</div></pre></td></tr></table></figure>
+<h2 id="5、原则"><a href="#5、原则" class="headerlink" title="5、原则"></a>5、原则</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">方向：从左到右或从上到下</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;1、flexDirection-column-row&quot;&gt;&lt;a href=&quot;#1、flexDirection-column-row&quot; class=&quot;headerlink&quot; title=&quot;1、flexDirection(column,row)&quot;&gt;&lt;/a&gt;1、flexDirection(column,row)&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;默认值:column,即竖直方向&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;2、justifyContent-flex-start-center-flex-end-space-around-space-between&quot;&gt;&lt;a href=&quot;#2、justifyContent-flex-start-center-flex-end-space-around-space-between&quot; class=&quot;headerlink&quot; title=&quot;2、justifyContent(flex-start, center, flex-end, space-around,  space-between)&quot;&gt;&lt;/a&gt;2、justifyContent(flex-start, center, flex-end, space-around,  space-between)&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;默认值：flex-start&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;当为column,竖直看；&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;当为row,水平看；&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;3、alignItem-flex-start-center-flex-end-stretch&quot;&gt;&lt;a href=&quot;#3、alignItem-flex-start-center-flex-end-stretch&quot; class=&quot;headerlink&quot; title=&quot;3、alignItem(flex-start, center, flex-end, stretch)&quot;&gt;&lt;/a&gt;3、alignItem(flex-start, center, flex-end, stretch)&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;默认值：stretch&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;与justifyContent相反&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="移动开发" scheme="http://sutong.github.io/categories/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/"/>
+    
+      <category term="react native" scheme="http://sutong.github.io/categories/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/react-native/"/>
+    
+    
+      <category term="react native" scheme="http://sutong.github.io/tags/react-native/"/>
+    
+      <category term="flex" scheme="http://sutong.github.io/tags/flex/"/>
+    
+      <category term="布局" scheme="http://sutong.github.io/tags/%E5%B8%83%E5%B1%80/"/>
+    
+  </entry>
   
   <entry>
     <title>git bug分支流程</title>
@@ -369,9 +406,9 @@
       <category term="linux" scheme="http://sutong.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/"/>
     
     
-      <category term="ubuntu" scheme="http://sutong.github.io/tags/ubuntu/"/>
-    
       <category term="中文" scheme="http://sutong.github.io/tags/%E4%B8%AD%E6%96%87/"/>
+    
+      <category term="ubuntu" scheme="http://sutong.github.io/tags/ubuntu/"/>
     
       <category term="搜狗输入法" scheme="http://sutong.github.io/tags/%E6%90%9C%E7%8B%97%E8%BE%93%E5%85%A5%E6%B3%95/"/>
     
@@ -692,51 +729,6 @@
       <category term="hexo" scheme="http://sutong.github.io/tags/hexo/"/>
     
       <category term="ubuntu" scheme="http://sutong.github.io/tags/ubuntu/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>oauth2.0-各种授权类型示例代码</title>
-    <link href="http://sutong.github.io/%E5%AE%89%E5%85%A8/oauth2-0/oauth2-0-%E5%90%84%E7%A7%8D%E6%8E%88%E6%9D%83%E7%B1%BB%E5%9E%8B%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81/"/>
-    <id>http://sutong.github.io/安全/oauth2-0/oauth2-0-各种授权类型示例代码/</id>
-    <published>2017-03-20T11:50:12.000Z</published>
-    <updated>2017-08-02T00:21:42.592Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="1、authorization-code"><a href="#1、authorization-code" class="headerlink" title="1、authorization_code"></a>1、authorization_code</h2><h3 id="1-1、请求临时令牌"><a href="#1-1、请求临时令牌" class="headerlink" title="1.1、请求临时令牌"></a>1.1、请求临时令牌</h3><p><strong>请求</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https://oauth2server.com/oauth/authorize?client_id=a17c21ed&amp;response_type=code&amp;state=5ca75bd30&amp;redirect_uri=https://oauth2client.com/auth</div></pre></td></tr></table></figure></p>
-<p><strong>响应</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https://oauth2client.com/cb?code=Yzk5ZDczMzRlNDEwY</div></pre></td></tr></table></figure></p>
-<a id="more"></a>
-<p><strong>异常</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">HTTP/1.1 2 Found</div><div class="line">Location: https://oauth2client.com/redirect?error=access_denied</div><div class="line"> &amp;error_description=The+user+denied+the+request</div><div class="line"> &amp;error_uri=https://oauth2server.com/error/access_denied</div><div class="line"> &amp;state=wxyz1234</div></pre></td></tr></table></figure></p>
-<h3 id="1-2、交换获取令牌"><a href="#1-2、交换获取令牌" class="headerlink" title="1.2、交换获取令牌"></a>1.2、交换获取令牌</h3><p><strong>请求</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">POST /oauth/token HTTP/1.1</div><div class="line">Host: oauth2server.com</div><div class="line"> </div><div class="line">code=Yzk5ZDczMzRlNDEwY</div><div class="line">&amp;grant_type=code</div><div class="line">&amp;client_id=mRkZGFjM</div><div class="line">&amp;client_secret=ZGVmMjMz</div></pre></td></tr></table></figure></p>
-<p><strong>响应</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">HTTP/1.1 200 OK</div><div class="line">Content-Type: application/json;charset=utf-8</div><div class="line">Cache-Control: no-store</div><div class="line">Pragma: no-cache</div><div class="line"> </div><div class="line">&#123;</div><div class="line">  &quot;access_token&quot;:&quot;MTQ0NjJkZmQ5OTM2NDE1ZTZjNGZmZjI3&quot;,</div><div class="line">  &quot;token_type&quot;:&quot;bearer&quot;,</div><div class="line">  &quot;expires_in&quot;:3600,</div><div class="line">  &quot;refresh_token&quot;:&quot;IwOGYzYTlmM2YxOTQ5MGE3YmNmMDFkNTVk&quot;,</div><div class="line">  &quot;scope&quot;:&quot;create&quot;,</div><div class="line">  &quot;state&quot;:&quot;12345678&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><strong>异常</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">HTTP/1.1 400 Bad Request</div><div class="line">Content-Type: application/json;charset=UTF-8</div><div class="line">Cache-Control: no-store</div><div class="line">Pragma: no-cache</div><div class="line"> </div><div class="line">&#123;</div><div class="line">  &quot;error&quot;: &quot;invalid_request&quot;,</div><div class="line">  &quot;error_description&quot;: &quot;Request was missing the &apos;redirect_uri&apos; parameter.&quot;,</div><div class="line">  &quot;error_uri&quot;: &quot;See the full API docs at http://oauth2server.com/docs/access_token&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="2、Implicit-Grant"><a href="#2、Implicit-Grant" class="headerlink" title="2、Implicit Grant"></a>2、Implicit Grant</h2><h3 id="2-1、browser-base"><a href="#2-1、browser-base" class="headerlink" title="2.1、browser-base"></a>2.1、browser-base</h3><p><strong>请求</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https://oauth2server.com/oauth/authorize?response_type=token&amp;client_id=mRkZGFjM&amp;state=TY2OTZhZGFk</div></pre></td></tr></table></figure></p>
-<p><strong>响应</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https://oauth2client.com/cb#token=Yzk5ZDczMzRlNDEwY&amp;state=TY2OTZhZGFk</div></pre></td></tr></table></figure></p>
-<h3 id="2-2、mobile-and-native-app"><a href="#2-2、mobile-and-native-app" class="headerlink" title="2.2、mobile and native app"></a>2.2、mobile and native app</h3><p><strong>请求</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https://www.arcgis.com/sharing/oauth2/authorize?client_id=eKNjzFFjH9A1ysYd&amp;response_type=token&amp;redirect_uri=exampleapp://auth</div></pre></td></tr></table></figure></p>
-<p><strong>响应</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">oauthdemo://auth#access_token=lS0KgilpRsT07qT_iMOg9bBSaWqODC1g061nSLsa8gV2GYtyynB6A-abCsWrDTvN9p7rI0kWa4u-ORXuFUQ7QGxiiniwpCSIV1AqzoLRHF1hYcI4joeDPOzZa9PZigiudtefciZy5&amp;expires_in=7199&amp;username=aaronpk</div></pre></td></tr></table></figure></p>
-<h2 id="3、Paasword-Grant"><a href="#3、Paasword-Grant" class="headerlink" title="3、Paasword Grant"></a>3、Paasword Grant</h2><p><strong>请求</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">POST /oauth/token HTTP/1.1</div><div class="line">Host: oauth2server.com</div><div class="line"> </div><div class="line">grant_type=password</div><div class="line">&amp;amp;username=user@example.com</div><div class="line">&amp;amp;password=1234luggage</div><div class="line">&amp;amp;client_id=xxxxxxxxxx</div><div class="line">&amp;amp;client_secret=xxxxxxxxxx</div></pre></td></tr></table></figure></p>
-<h2 id="4、Client-Credentials"><a href="#4、Client-Credentials" class="headerlink" title="4、Client Credentials"></a>4、Client Credentials</h2><p><strong>概述</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">访问自身资源，不代表用户行为</div></pre></td></tr></table></figure></p>
-<p><strong>请求</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">POST /oauth/token HTTP/1.1</div><div class="line">Host: oauth2server.com</div><div class="line"> </div><div class="line">grant_type=client_credentials</div><div class="line">&amp;client_id=xxxxxxxxxx</div><div class="line">&amp;client_secret=xxxxxxxxxx</div></pre></td></tr></table></figure></p>
-<h2 id="5、refresh-token"><a href="#5、refresh-token" class="headerlink" title="5、refresh token"></a>5、refresh token</h2><p><strong>注意</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">如果包含scope,需与上一次的scope相同</div></pre></td></tr></table></figure></p>
-<p><strong>请求</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">POST /oauth/token HTTP/1.1</div><div class="line">Host: oauth2server.com</div><div class="line"> </div><div class="line">grant_type=refresh_token</div><div class="line">&amp;refresh_token=xxxxxxxxxxx</div><div class="line">&amp;client_id=xxxxxxxxxx</div><div class="line">&amp;client_secret=xxxxxxxxxx</div></pre></td></tr></table></figure></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;1、authorization-code&quot;&gt;&lt;a href=&quot;#1、authorization-code&quot; class=&quot;headerlink&quot; title=&quot;1、authorization_code&quot;&gt;&lt;/a&gt;1、authorization_code&lt;/h2&gt;&lt;h3 id=&quot;1-1、请求临时令牌&quot;&gt;&lt;a href=&quot;#1-1、请求临时令牌&quot; class=&quot;headerlink&quot; title=&quot;1.1、请求临时令牌&quot;&gt;&lt;/a&gt;1.1、请求临时令牌&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;请求&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;https://oauth2server.com/oauth/authorize?client_id=a17c21ed&amp;amp;response_type=code&amp;amp;state=5ca75bd30&amp;amp;redirect_uri=https://oauth2client.com/auth&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;响应&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;https://oauth2client.com/cb?code=Yzk5ZDczMzRlNDEwY&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="安全" scheme="http://sutong.github.io/categories/%E5%AE%89%E5%85%A8/"/>
-    
-      <category term="oauth2.0" scheme="http://sutong.github.io/categories/%E5%AE%89%E5%85%A8/oauth2-0/"/>
-    
-    
-      <category term="oauth2.0" scheme="http://sutong.github.io/tags/oauth2-0/"/>
-    
-      <category term="授权类型" scheme="http://sutong.github.io/tags/%E6%8E%88%E6%9D%83%E7%B1%BB%E5%9E%8B/"/>
-    
-      <category term="示例" scheme="http://sutong.github.io/tags/%E7%A4%BA%E4%BE%8B/"/>
     
   </entry>
   
